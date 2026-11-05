@@ -1,26 +1,44 @@
 body {
-    background-color: #d6a094;
-    padding: 50px;
+    background-image: url('hethereau.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
 }
 
 h1,
-h2,
-h3 {
+h2 {
     color: #5a2014;
     font-family: sans-serif;
     background-color: beige;
     padding: 5%;
-    margin: 140px;
+    margin: 70px;
     border: 5px dashed rgb(243, 196, 110);
     display: block;
+}
+h3 {
+    color: white;
+    display: block;
+    background-color: rgb(150, 115, 90); 
+    border: 3px solid rgb(180, 180, 161);
+    padding: 5%;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto; 
 }
 p {
     color: rgb(47, 37, 37);
     display: block;
-    background-color: beige;
+    background-color: rgba(245, 245, 220, 0.8); 
     border: 3px solid rgb(180, 180, 161);
     padding: 5%;
     border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto; 
 }
 
 img {
@@ -30,25 +48,85 @@ img {
     width: 20%;
 }
 
-#sleepy {
-    width: 25%;
-}
-.image-container {
-  display: flex;       
-  gap: 10px;          
-}
-
-.image-container img {
-  width: 50%;         
-  height: auto;        
-}
 .below {
     background-color: #5a2014;
     padding: 20px;
     border-radius: 12px;
 }
-    background-image: url(hethereau.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 80px 20px;
+
+.mosaInfo {
+    display: flex;         
+    align-items: center;   
+    gap: 20px;            
+    
+    max-width: 800px;
+    margin: 20px auto; 
+}
+.mosaInfo img {
+    width: 300px;         
+    height: auto;         
+}
+
+.entityInfo {
+    display: flex;         
+    align-items: center;   
+    gap: 20px;            
+    
+    max-width: 800px;
+    margin: 10px auto; 
+}
+.entityInfo img {
+    width: 300px;         
+    height: auto;         
+}
+
+#weatherimg {
+    width: 300px;
+}
+#weather-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;                  /*behind text but over wall (those who know) */
+    pointer-events: none;
+    transition: all 0.5s ease;
+    background: transparent;
+}
+
+#weather-overlay.rainy {
+    background: linear-gradient(to bottom, rgba(40, 60, 90, 0.6), rgba(20, 30, 50, 0.8));
+}
+
+#weather-overlay.cold {
+    background: linear-gradient(to bottom, rgba(180, 210, 230, 0.5), rgba(230, 245, 255, 0.7));
+}
+
+#weather-overlay.sunny {
+    background: radial-gradient(circle at 85% 15%, rgba(255, 230, 0, 0.8) 0%, rgba(255, 200, 0, 0.3) 20%, transparent 60%);
+}
+
+.weather-box {
+    position: relative;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+    width: 280px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#weather-btn {
+    background: rgb(238, 211, 34);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#weather-btn:hover {
+    background: #e0e0e0;
+}
