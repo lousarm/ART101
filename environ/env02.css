@@ -82,11 +82,26 @@ img {
 
 .entityInfo img {
     width: 300px;         
-    height: auto;         
+    height: auto;    
+    cursor: pointer;     
 }
 
-.interact {
-    box-shadow: 0 0 15px black;
+.entityInfo img.interact {
+    animation: anomalyHighlight 1.2s ease-in-out;
+}
+
+@keyframes anomalyHighlight {
+    0% {
+        filter: drop-shadow(0 0 0 transparent);
+    }
+
+    35% {
+        filter: drop-shadow(0 0 8px black);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 0 transparent);
+    }
 }
 
 #anomaly1status {
